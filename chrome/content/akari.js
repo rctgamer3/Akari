@@ -10,38 +10,38 @@ AkariShortener.timeout = setTimeout(function() {
 AkariShortener.ShortenPage = function() {
   var url = gBrowser.contentWindow.location.href;
   AkariShortener.getShort(url);
-}
+};
 
 AkariShortener.ShortenLink = function() {
   var url = gContextMenu.link.href;
   AkariShortener.getShort(url);
-}
+};
 
 AkariShortener.ShortenImage = function() {
   var url = gContextMenu.mediaURL;
   AkariShortener.getShort(url);
-}
+};
 
 AkariShortener.contextItems = function() {
   var akari_link = document.getElementById("context-akari-link-url");
   var akari_image = document.getElementById("context-akari-image-url");
 
-  akari_link.hidden = (document.popupNode.localName.toLowerCase() != 'a')
-  akari_image.hidden = (document.popupNode.localName.toLowerCase() != "img")
-}
+  akari_link.hidden = (document.popupNode.localName.toLowerCase() != 'a');
+  akari_image.hidden = (document.popupNode.localName.toLowerCase() != "img");
+};
 
 AkariShortener.transferComplete = function() {
-  serverResponse = akariReq.responseText;
+  serverResponse = JSON.parse(akariReq.responseText);
   var alertText;
-  if(serverResponse.startsWith("http")) {
+  if(serverResponse.success === true && serverResponse.status == 200) {
     const gClipboardHelper = Components.classes["@mozilla.org/widget/clipboardhelper;1"].getService(Components.interfaces.nsIClipboardHelper);
-    gClipboardHelper.copyString(serverResponse);
-    alertText = "Waai! The URL was shortened and has been copied to the clipboard:\n"+serverResponse;
+    gClipboardHelper.copyString(serverResponse.data.url);
+    alertText = "Waai! The URL was shortened and has been copied to the clipboard:\n"+serverResponse.data.url;
   } else {
-    alertText = "Something went wrong:\n"+serverResponse;
+    alertText = "Something went wrong:\n"+serverResponse.data.error;
   }
   Components.classes["@mozilla.org/alerts-service;1"].getService(Components.interfaces.nsIAlertsService).showAlertNotification("chrome://akari/content/icons/icon.png", "Akari URL Shortener", alertText);
-}
+};
 
 AkariShortener.getShort = function(u) {
   // decode url first to be safe
@@ -49,13 +49,13 @@ AkariShortener.getShort = function(u) {
   url = encodeURIComponent(u);
 
   akariReq = new XMLHttpRequest();
-  akariReq.open('GET', 'http://api.waa.ai/?url='+url, true);
+  akariReq.open("GET", "http://api.waa.ai/shorten?url="+url, true);
 
   // Once request is finished
   akariReq.addEventListener("load", function () { AkariShortener.transferComplete(); });
 
   akariReq.send();
-}
+};
 
 Components.utils.import("resource:///modules/CustomizableUI.jsm");
 CustomizableUI.createWidget({
