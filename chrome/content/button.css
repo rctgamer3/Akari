@@ -1,0 +1,8 @@
+#akari-shortener-button {
+  list-style-image: url("chrome://akari/content/icons/bun16.png")
+}
+
+#wrapper-akari-shortener-button[place="palette"] .toolbarbutton-icon,
+#akari-shortener-button[cui-areatype="menu-panel"] {
+  list-style-image: url("chrome://akari/content/icons/bun32.png")
+}

@@ -1,0 +1,3 @@
+content	akari	chrome/content/
+style chrome://global/content/customizeToolbar.xul chrome://akari/content/button.css
+overlay	chrome://browser/content/browser.xul	chrome://akari/content/akariOverlay.xul

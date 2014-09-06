@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>akari@waa.ai</em:id>
+    <em:name>Akari Link Shortener</em:name>
+    <em:version>1.22</em:version>
+    <em:type>2</em:type>
+    <em:description>Akari will reduce the presence of your URL</em:description>
+    <em:creator>bedabeda</em:creator>
+    <em:developer>rctgamer3</em:developer>
+    <em:homepageURL>http://waa.ai/</em:homepageURL>
+    <em:iconURL>chrome://akari/content/icons/icon.png</em:iconURL>
+    <!-- Firefox -->
+    <em:targetApplication>
+      <Description>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+        <em:minVersion>29.0</em:minVersion>
+        <em:maxVersion>31.*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+  </Description>
+</RDF>
