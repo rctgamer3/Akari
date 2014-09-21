@@ -1,0 +1,12 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@-moz-document url("chrome://browser/content/browser.xul") {
+#akari-shortener-button {
+  list-style-image: url("chrome://akari/skin/bun16.png")
+}
+
+toolbar:not([iconsize="small"]) #akari-shortener-button,
+#wrapper-akari-shortener-button[place="palette"] .toolbarbutton-icon,
+#akari-shortener-button[cui-areatype="menu-panel"] {
+  list-style-image: url("chrome://akari/skin/bun24.png")
+}
+}
