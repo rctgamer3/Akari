@@ -1,0 +1,105 @@
+body {
+	font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-image: url(../img/background.jpg);
+	background-repeat: repeat;
+	background-attachment: fixed;
+	background-position: left top;
+	background-size: cover;
+}
+
+.island-block {
+	padding-top: 40px;
+}
+
+.island::after {
+    content: " ";
+    display: block;
+    float: right;
+    font-size: 13px;
+    color: #999;
+}
+
+.btc-address-footer {
+	display: block;
+	float: right;
+	font-size: 13px;
+	color: #999;
+}
+
+h1 {
+	margin-bottom: 30px;
+}
+
+.popup-img {
+	float: left;
+	width: 32px;
+	height: 32px;
+	border-radius: 4px;
+	margin-bottom: 8px;
+	margin-right: 5px;
+	vertical-align: bottom;
+}
+
+.popup-title {
+	font-size: 12px;
+	margin-bottom: 2px;
+}
+			
+.popup-text {
+	margin: 4px 0;
+}
+
+.nav {
+	margin-bottom: 30px;
+}
+
+.donate-logo {
+	vertical-align: bottom;
+	margin-right: 5px;
+}
+
+.qr-code {
+	height: 128px;
+	width: 128px;
+}
+
+.volume-label {
+	margin-top: 8px;
+	font-weight: normal;
+}
+
+.glyphicon.normal-right-spinner {
+	animation: glyphicon-spin-r 2s infinite linear;
+}
+
+.more-info {
+	display: none;
+	opacity: 0;
+	margin-top: 10px;
+	margin-bottom: 0;
+}
+
+.settings-saved-container {
+	margin-bottom: 0;
+	margin-top: 10px;
+}
+
+@-webkit-keyframes glyphicon-spin-r {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(359deg);
+	}
+}
+
+@keyframes glyphicon-spin-r {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(359deg);
+	}
+}

@@ -1,0 +1,59 @@
+{
+  "name": "Akari URL Shortener",
+  "version": "2.0.5",
+  "author": "rctgamer3",
+  "homepage_url": "https://waa.ai",
+  "manifest_version": 2,
+  "description": "Akari will reduce the presence of your URL. Uses waa.ai API to generate short URLs.",
+  "options_ui": {
+    "page": "options.html",
+    "browser_style": true
+  },
+  "background": {
+    "scripts": [
+      "js/global.js",
+      "js/background.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "img/icon16.png",
+      "24": "img/icon24.png",
+      "32": "img/icon32.png"
+    },
+    "default_title": "Akari Link Shortener",
+    "default_popup": "popup.html"
+  },
+  "applications": {
+    "gecko": {
+      "id": "akari@waa.ai",
+      "strict_min_version": "48.0"
+    }
+  },
+  "permissions": [
+	"tabs",
+	"https://api.waa.ai/*",
+	"clipboardWrite",
+	"contextMenus",
+	"notifications",
+	"storage"
+  ],
+  "web_accessible_resources": [
+    "img/icon48.png",
+    "akarin.mp3"
+  ],
+  "icons": {
+    "16": "img/icon16.png",
+    "24": "img/icon24.png",
+    "32": "img/icon32.png",
+    "48": "img/icon.png"
+  },
+  "page_action": {
+    "default_icon": {
+      "16": "img/bun16.png",
+      "24": "img/bun24.png",
+      "32": "img/bun32.png",
+      "48": "img/icon.png"
+    }
+  }
+}

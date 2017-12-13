@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	    <title>Akari Link Shortener - Options</title>
+		<link href="css/style.css" rel="stylesheet">
+		<link href="css/options.css" rel="stylesheet">
+		<script src="js/global.js"></script>
+		<script src="js/options.js"></script>
+	</head>
+	<body>
+		<div class="row">
+	        <div class="island-block">
+	        	<div class="island island-musical">
+		        	<img src="img/akari-face.jpg" class="pull-right img-rounded" alt="Akari">
+
+					<h1>Options</h1>
+					
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="options.html">Options</a></li>
+						<li><a href="history.html">History</a></li>
+						<li><a href="donate.html">Donate</a></li>
+					</ul>
+
+					<p id="">
+						Links will be saved to your account if you have an account and enter your API key below.<br>
+						<small class="text-muted">Don't have an accout? Sign up <a href="https://waa.ai/signup">here</a>.</small>
+					</p>
+
+					<div id="result" class="form-group settings-saved-container clearfix" style="display: none;">
+						<div class="col-sm-12">
+							<div class="alert alert-success alert-sm">
+								<p id="message"></p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="buffer"></div>
+
+					<div class="form-horizontal">
+						<div class="form-group">
+							<label for="apiKey" class="col-sm-3 col-md-2 col-lg-2 control-label control-label">API Key</label>
+							<div class="col-sm-7">
+								<input id="apiKey" class="form-control" type="text" placeholder="your api key&hellip;">
+								<span id="helpBlock" class="help-block">
+									<small>
+										You can find your key at
+										<a href="https://waa.ai/account#api" class="text-muted" target="_blank">
+											https://waa.ai/account#api
+										</a>
+									</small>
+								</span>
+							</div>
+							<button id="save" class="btn btn-primary" tabindex="-1">Save</button>
+						</div>
+
+						<hr>
+						<h4>Link Options</h4>
+
+						<div class="form-group">
+							<label for="playSoundEffect" class="col-sm-3 col-md-2 col-lg-2 control-label control-label"></label>
+							<div class="col-sm-7">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" id="privateLinks"> Unguessable links &mdash;
+									</label>
+									<a href="#" id="privateLinksInfoLink">
+										<small>What's this?</small>
+									</a>
+									<div id="privateLinksInfo" class="well well-sm more-info">
+										<p class="snug-bottom">
+											<small>
+												Shortened links will be slightly longer, but harder to randomly guess.
+											</small>
+											<br>
+											<br>
+											<small>
+												<b>Standard link</b>:
+												<a href="https://waa.ai/jeKn" target="_blank">
+													https://waa.ai/jeKn
+												</a>
+											</small>
+											<br>
+											<small>
+												<b>Unguessable link</b>:
+												<a href="https://waa.ai/jZV8/d739e5" target="_blank">
+													https://waa.ai/jZV8/d739e5
+												</a>
+											</small>
+
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="playSoundEffect" class="col-sm-3 col-md-2 col-lg-2 control-label control-label"></label>
+							<div class="col-sm-7">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" id="akarinLinks"> Use akari.in domain &mdash;
+									</label>
+									<a href="#" id="akarinLinksInfoLink">
+										<small>What's this?</small>
+									</a>
+									<div id="akarinLinksInfo" class="well well-sm more-info">
+										<p>
+											<small>
+												Returns shortened links as <span class="text-info">https://akari.in/{short-code}</span>.
+												Both waa.ai and akari.in will work with the link, it's just an alternate domain.
+											</small>
+										</p>
+										<p class="snug-bottom">
+											<small>
+												Example:
+												<span class="text-info">
+													<a href="https://waa.ai/Le" target="_blank">https://waa.ai/Le</a>
+												</span>
+												and
+												<span class="text-info">
+													<a href="https://akari.in/Le" target="_blank">https://akari.in/Le</a>
+												</span>
+												redirect to the same place.
+											</small>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<hr>
+						<h4>Extension Options</h4>
+
+						<div class="form-group">
+							<label for="notificationLongUrl" class="col-sm-3 col-md-2 col-lg-2 control-label control-label"></label>
+							<div class="col-sm-9">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" id="notificationLongUrl"> Show original URL in notifications
+									</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="notificationRandomImage" class="col-sm-3 col-md-2 col-lg-2 control-label control-label"></label>
+							<div class="col-sm-9">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" id="notificationRandomImage"> Use random Yuru Yuri characters in notification image
+									</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="useNotification" class="col-sm-3 col-md-2 col-lg-2 control-label control-label"></label>
+							<div class="col-sm-9">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" id="useNotification"> Use notification on toolbar button click &mdash;
+									</label>
+									<a href="#" id="useNotificationInfoLink">
+										<small>What's this?</small>
+									</a>
+									<div id="useNotificationInfo" class="well well-sm more-info">
+										<p>
+											<small>
+												Clicking the hair bun icon in the toolbar will no longer open a popup below it.
+												Instead, a notification will be displayed.
+												<div class="buffer-mini"></div>
+												<span class="text-mini text-muted">
+													Note: this is the same notification you see when shortening a link thought he right click menu.
+												</span>
+											</small>
+										</p>
+										<div class="buffer-mini"></div>
+										<div class="text-small text-center">
+											<strong>
+												So, instead of this:
+											</strong>
+
+											<img src="img/popup-example.png">
+
+											<div class="buffer"></div>
+											<strong>You'll see this:</strong>
+											<img src="img/notification-example.png">
+										</div>
+									</div>
+									<p class="helper-text text-muted text-small">Note: Changes to this setting requires that the extension reloads.</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="playSoundEffect" class="col-sm-3 col-md-2 col-lg-2 control-label control-label"></label>
+							<div class="col-sm-7">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" id="playSoundEffect"> Play "Akarin~" sound on shorten
+									</label>
+									&mdash;
+									<a href="#" id="playSound">
+										<small>Play &#9834;&#9834;</small>
+									</a>
+								</div>
+								<div id="soundEffectVolumeContainer">
+									<hr>
+									<label for="soundEffectVolume" class="pull-left volume-label">Volume:</label>
+									<div class="col-sm-3">
+										<select id="soundEffectVolume" class="form-control">
+											<option value="0.1">1</option>
+											<option value="0.2">2</option>
+											<option value="0.3">3</option>
+											<option value="0.4">4</option>
+											<option value="0.5">5</option>
+											<option value="0.6">6</option>
+											<option value="0.7">7</option>
+											<option value="0.8">8</option>
+											<option value="0.9">9</option>
+											<option value="1">10</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="buffer-small"></div>
+
+						<!--<div class="form-group">-->
+							<!--<div class="col-sm-offset-2 col-sm-7">-->
+								<!--<button id="save" class="btn btn-primary">Save</button>-->
+							<!--</div>-->
+						<!--</div>-->
+					</div>
+					<div class="btc-address-footer">
+						btc: 13h3eeLXJz7b3HWs6gxzheS58FFoz7zHDg
+					</div>
+	        	</div>
+	        </div>
+		</div>
+	</body>
+</html>

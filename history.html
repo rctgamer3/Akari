@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+		<title>Akari Link Shortener - Options</title>
+		<link href="css/style.css" rel="stylesheet">
+		<link href="css/options.css" rel="stylesheet">
+		<script src="js/global.js"></script>
+		<script src="js/history.js"></script>
+	</head>
+	<body>
+		<div class="row">
+			<div class="island-block">
+				<div class="island">
+					<img src="img/akari-face.jpg" class="pull-right img-rounded" alt="Akari">
+					<h1>History</h1>
+					
+					<ul class="nav nav-tabs">
+						<li><a href="options.html">Options</a></li>
+						<li class="active"><a href="history.html">History</a></li>
+						<li><a href="donate.html">Donate</a></li>
+					</ul>
+
+					<p id="nonAccountHistoryMessage" class="hide">
+						<small>
+							Local history. This is not pulled from the server or tied to an account.
+						</small>
+					</p>
+
+					<div id="accountHistoryLoading" class="hide">
+						<span id="spinner" class="glyphicon glyphicon-refresh normal-right-spinner"></span>
+						&nbsp;&nbsp;Getting history from server&hellip;
+					</div>
+					
+					<p>
+						<a href="#" class="clear-btn hidden">
+							Clear history
+						</a>
+					</p>
+
+					<div class="buffer-small"></div>
+					
+					<ul id="history" class="short-url-history"></ul>
+
+					<div id="loadMoreHistoryContainer" class="text-center hide">
+						<hr>
+						<a href="" id="loadMore" class="btn btn-primary btn-xs">
+							Load More
+						</a>
+					</div>
+					
+					<p><a href="#" class="clear-btn hidden">Clear history</a></p>
+					
+					<p id="message"></p>
+
+					<div class="btc-address-footer">
+						btc: 13h3eeLXJz7b3HWs6gxzheS58FFoz7zHDg
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
